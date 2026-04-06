@@ -1,16 +1,12 @@
-#include <iostream>
-#include <thread>
-#include <chrono>
-#include <string>
-
-int self_destroying_text() {
-    std::string message = "Этот текст исчезнет через 2 секунды...";
-    std::cout << message << std::flush;
-
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-
-    // Возвращаемся в начало и забиваем строку пробелами
-    std::cout << "\r" << std::string(message.length(), ' ') << "\r" << std::flush;
-
-    return 0;
+#include "functions.hpp"
+/**
+ * Функция удаляет указанное количество строк, начиная снизу вверх.
+ * @param lines_count — сколько строк текста нужно стереть.
+ */
+void delete_text(int lines_count) {
+    for (int i = 0; i < lines_count; ++i) {
+        // 1. Поднимаем курсор на строку вверх
+        // 2. Стираем строку целиком
+        std::cout << "\033[A\033[2K" << std::flush;
+    }
 }

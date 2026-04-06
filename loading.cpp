@@ -1,6 +1,7 @@
 #include "functions.hpp"
 
 void loading(){
+    std::cout << "Загрузка...";
     //устанавливаем ИИ Спрингтрапа и его позицию на камерах
     if (night > 1 && night < 6) springtrap_ai = night;
     else if (night == 6) springtrap_ai = 7;
@@ -35,4 +36,6 @@ void loading(){
     vent_cams = false;
     cameras_open = false;
     maintenance_panel_opened = false;
+
+    delete_text(1);
 }

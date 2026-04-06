@@ -19,7 +19,7 @@ void camera_system(){
         indent(2);
         int clicked_cam = 0;
         std::cin >> clicked_cam;//инструкция действий
-        indent(1);
+        delete_text(10);
 
         if (clicked_cam < 11 && clicked_cam > 1 && !vent_cams) current_cam = clicked_cam;
         else if (clicked_cam == 1 && !vent_cams) current_cam = 18;

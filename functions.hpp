@@ -13,7 +13,7 @@ inline bool vent_cams; //переменная правдива если откр
 
 inline bool only_office, maintenance_panel_opened, cameras_open;
 
-inline bool ventilation_broken = false, repairing = false;
+inline bool repairing = false;
 
 inline int repair_number, player_change;
 inline bool fast_nights, agressive, radar, no_errors;//активация читов
@@ -30,6 +30,7 @@ void night_select();
 void loading();
 
 //геймплейные функции
+void delete_text(int lines_count);
 int rng(int min, int max);
 void audio_lure(int a);
 int time();
