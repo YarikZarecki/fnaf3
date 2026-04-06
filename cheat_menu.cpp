@@ -11,6 +11,7 @@ void print_cheat(bool b) {
 }
 
 void cheat_menu() {
+    int cheat, activated_cheat;
     while (cheat == 0) {
         std::cout << "Чтобы выбрать читы, введи 1. Чтобы начать игру, введи любое другое число." << std::endl << std::endl;
         std::cin >> cheat;

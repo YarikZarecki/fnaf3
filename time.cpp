@@ -2,7 +2,7 @@
 #include <thread>
 #include "functions.hpp"
 
-int main() {
+int time() {
     cheat_menu();//выбираем читы
     night_select();//выбираем ночь
 
@@ -33,6 +33,7 @@ int main() {
 
     if (hour == 6) {
         std::cout << "Ты победил." << std::endl;
+        springtrap_position = 0;
     }
 
     return 0;
