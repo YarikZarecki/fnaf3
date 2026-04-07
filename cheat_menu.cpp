@@ -11,14 +11,13 @@ void print_cheat(bool b) {
 }
 
 void cheat_menu() {
-    int cheat, activated_cheat;
     while (cheat == 0) {
-        std::cout << "Чтобы выбрать читы, введи 1. Чтобы начать игру, введи любое другое число." << std::endl << std::endl;
-        std::cin >> cheat;
+        std::cout << "Чтобы выбрать читы, введи 1. Чтобы начать игру, введи любое другое число.";
+        indent(2);
+        cheat = cin();
         if (cheat != 1) return;
 
         while (cheat == 1) {
-            std::cout << "Для выхода из меню читов, введи 0." << std::endl;
             print_cheat(fast_nights);
             std::cout << "быстрых ночей, введи 1." << std::endl;
             print_cheat(agressive);  
@@ -26,14 +25,13 @@ void cheat_menu() {
             print_cheat(radar);
             std::cout << "радара, введи 3." << std::endl;
             print_cheat(no_errors);   
-            std::cout << "отсутствия ошибок, введи 4.";
-            
+            std::cout << "отсутствия ошибок, введи 4." << std::endl;
+            std::cout << "Для выхода из меню читов, введи любое число." << std::endl;
+
             indent(2);
-            std::cin >> activated_cheat;
+            activated_cheat = cin();
 
-            if (activated_cheat == 0) cheat = 0;
-
-            else if (activated_cheat == 1) {
+            if (activated_cheat == 1) {
                 fast_nights = !fast_nights;
                 std::cout << "Быстрые ночи в"; writing_y(!fast_nights); std::cout << "ключены.";
                 indent(2);
@@ -53,7 +51,7 @@ void cheat_menu() {
                 std::cout << "Отсутствие ошибок в"; writing_y(!no_errors); std::cout << "ключено.";
                 indent(2);
             }
-            else wrong_number();
+            else cheat = 0;
         }
     }
 }
