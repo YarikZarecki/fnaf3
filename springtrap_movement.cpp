@@ -10,6 +10,7 @@ void move(int a){
         if (((current_cam == springtrap_position || current_cam == a) && !vent_cams) || ((current_vent_cam == springtrap_position || current_vent_cam == a) && vent_cams))
         std::cout << "Перемещение." << std::endl;
     springtrap_position = a;
+    radar_text();
 }
 
 void opportunities(int current_pos, int opt1, int opt2, int opt3){
@@ -72,7 +73,11 @@ void lure_move(int a, int pos_near, int c, int d, int e){
 
 void audio_lure(int a){
     int b = rng(1,7);
-    if (current_audio_uses > 0 && b != 1){
+    if (current_audio_uses != 0 && b != 1){
+        int sound = rng(1,3);
+        if (sound == 1) std::cout << "Hello!" << std::endl;
+        else if (sound == 2) std::cout << "Hi!" << std::endl;
+        else if (sound == 3) std::cout << "Ha-ha-ha!" << std::endl;
         lure_move(a, 1, 2, 2, 2);
         lure_move(a, 2, 3, 4, 5);
         lure_move(a, 3, 2, 4, 4);
@@ -85,7 +90,7 @@ void audio_lure(int a){
         lure_move(a, 10, 9, 9, 9);
         lure_move(a, 19, 18, 18, 18);
     }
-    current_audio_uses--;
+    if (current_audio_uses > 0) current_audio_uses--;
 }
 
 void force_move(int level, int position){

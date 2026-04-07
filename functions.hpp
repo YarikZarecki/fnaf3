@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-inline int hour, hour_lenght;
+inline int hour, hour_lenght, cheat, activated_cheat;
 inline int night, springtrap_ai, springtrap_position, total_turns;
 
 inline int current_audio_uses, audio_uses_per_night;
@@ -17,9 +17,14 @@ inline bool repairing = false;
 
 inline int repair_number, player_change;
 inline bool fast_nights, agressive, radar, no_errors;//активация читов
+void radar_text();
+
+inline bool russian = true, english, polish;
+void print(const char* russian, const char* english, const char* polish);
 
 void camera_system();
 //функции
+int cin();
 void wrong_number();
 void indent(int m);
 void writing_y(bool a);
@@ -28,6 +33,7 @@ void cheat_menu();
 void office_position();
 void night_select();
 void loading();
+void ending_night();
 
 //геймплейные функции
 void delete_text(int lines_count);

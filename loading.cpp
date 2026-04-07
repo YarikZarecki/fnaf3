@@ -1,11 +1,9 @@
 #include "functions.hpp"
 
 void loading(){
-    std::cout << "Загрузка...";
     //устанавливаем ИИ Спрингтрапа и его позицию на камерах
     if (night > 1 && night < 6) springtrap_ai = night;
     else if (night == 6) springtrap_ai = 7;
-    else springtrap_ai = 0;
     if (springtrap_ai != 0) springtrap_position = rng(6, 10);
 
     //устанавливаем ограничения в использовании аудио, камер и вентиляции
@@ -18,6 +16,11 @@ void loading(){
         audio_uses_per_night = 2;
         camera_time_per_night = 17;
         ventilation_time_per_night = 60;
+    }
+    if (no_errors){
+        audio_uses_per_night = -1;
+        camera_time_per_night = -1;
+        ventilation_time_per_night = -1;
     }
     current_audio_uses = audio_uses_per_night;
     current_camera_time = camera_time_per_night;
@@ -37,5 +40,5 @@ void loading(){
     cameras_open = false;
     maintenance_panel_opened = false;
 
-    delete_text(1);
+    std::cout << "\033[2J\033[H" << std::flush;
 }
