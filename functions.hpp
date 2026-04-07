@@ -33,6 +33,7 @@ void cheat_menu();
 void office_position();
 void night_select();
 void loading();
+void start_night();
 void ending_night();
 
 //геймплейные функции

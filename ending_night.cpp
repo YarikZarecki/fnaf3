@@ -12,6 +12,8 @@ void ending_night(){
     current_vent_cam = 11;
     sealed_vent_cam = 0;
     vent_cams = false;
+    only_office = false;
     cameras_open = false;
     maintenance_panel_opened = false;
+    night = 0;
 }

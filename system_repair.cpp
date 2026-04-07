@@ -21,7 +21,7 @@ void broken_systems(){
 
 void system_repair(){
     maintenance_panel_opened = true;
-    void broken_systems();
+    broken_systems();
     while (maintenance_panel_opened){
         for(int i = 1; i <= 4; i++) {
         std::cout << "Чтобы починить ";
@@ -34,8 +34,7 @@ void system_repair(){
         }
 
         std::cout << "Чтобы выйти, введите любое другое число." << std::endl;
-        std::cin >> repair_number;
-
+        repair_number = cin();
         if (repair_number == 1) current_audio_uses = audio_uses_per_night;
         else if (repair_number == 2) current_camera_time = camera_time_per_night;
         else if (repair_number == 3) current_ventilation_time = ventilation_time_per_night;
@@ -44,7 +43,10 @@ void system_repair(){
             current_camera_time = camera_time_per_night;
             current_ventilation_time = ventilation_time_per_night;
         }
-        else maintenance_panel_opened = false;
+        else {
+            maintenance_panel_opened = false;
+            office_position();
+        }
     }
 }
 

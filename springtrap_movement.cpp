@@ -62,8 +62,8 @@ void movement(){
             move_counter = 0;
             total_turns = 0;
         }
-        move_counter++;
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        //move_counter++;
+        //std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
 

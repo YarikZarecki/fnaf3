@@ -1,6 +1,7 @@
 #include "functions.hpp"
 
 void loading(){
+    std::cout << "Загрузка...";
     //устанавливаем ИИ Спрингтрапа и его позицию на камерах
     if (night > 1 && night < 6) springtrap_ai = night;
     else if (night == 6) springtrap_ai = 7;
@@ -32,7 +33,7 @@ void loading(){
     else hour_lenght = 60000;
     if (fast_nights) hour_lenght /= 2;
 
-    //устанавливаем камеру, время, длину часа
+    //устанавливаем камеру, положение игрока в офисе время, длину часа
     current_cam = 2;
     current_vent_cam = 11;
     sealed_vent_cam = 0;
@@ -41,4 +42,6 @@ void loading(){
     maintenance_panel_opened = false;
 
     std::cout << "\033[2J\033[H" << std::flush;
+
+    start_night();
 }
